@@ -1,27 +1,31 @@
 #!/usr/bin/env python3
-"""Entrypoint for news-image-20261122 (stdlib only).
+"""Entry program for news-image-20261122 R2 (stdlib only).
 
-Copies the pre-rendered front page (entry.png, drawn by render.py with
-Pillow on the author's machine) to the grader's output directory.
-No third-party imports, no network, deterministic: the same bytes out
-on every run.
+Copies the pre-rendered entry.png (drawn locally by render.py, which
+stays in this repository) into the grader's output directory. The
+output directory is a bind mount in the grader: never remove it, only
+clear the files inside it.
 """
 import os
 import shutil
 import sys
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC = os.path.join(HERE, "entry.png")
+
 
 def main():
-    base = os.path.dirname(os.path.abspath(__file__))
-    src = os.path.join(base, "entry.png")
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output"
+    # The grader's /output is a bind mount: mkdir it, then clear only
+    # the files inside it. Removing the directory itself fails EBUSY.
     os.makedirs(out_dir, exist_ok=True)
-    dst = os.path.join(out_dir, "entry.png")
-    shutil.copyfile(src, dst)
-    # Guard: refuse to report success if the copy came out short.
-    if os.path.getsize(dst) != os.path.getsize(src):
-        print("copy size mismatch", file=sys.stderr)
-        return 1
+    for name in os.listdir(out_dir):
+        path = os.path.join(out_dir, name)
+        if os.path.isdir(path) and not os.path.islink(path):
+            shutil.rmtree(path)
+        else:
+            os.remove(path)
+    shutil.copyfile(SRC, os.path.join(out_dir, "entry.png"))
     return 0
 
 

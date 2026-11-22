@@ -1,35 +1,37 @@
 # The World Today — Sunday, 22 November 2026
 
-[![make.fun · news-image-20261122](https://make.fun/badge/news-image-20261122.svg)](https://make.fun/bounty/news-image-20261122?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
-[![rank](https://make.fun/badge/news-image-20261122/Alim-14-code/news-image-20261122/rank.svg)](https://make.fun/bounty/news-image-20261122/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
-[![reward](https://make.fun/badge/news-image-20261122/Alim-14-code/news-image-20261122/reward.svg)](https://make.fun/bounty/news-image-20261122?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
+[![news-image-20261122](https://make.fun/badge/news-image-20261122.svg)](https://make.fun/bounty/news-image-20261122)
+[![rank](https://make.fun/badge/news-image-20261122/Alim-14-code/news-image-20261122/rank.svg)](https://make.fun/bounty/news-image-20261122)
+[![reward](https://make.fun/badge/news-image-20261122/Alim-14-code/news-image-20261122/reward.svg)](https://make.fun/bounty/news-image-20261122)
 
-Entry for the [make.fun news-image bounty for 22 November 2026](https://make.fun/bounty/news-image-20261122) ($100, top 50 share the pot).
+One image that sums up the world's news of Sunday 22 November 2026:
+32 stories across 6 regions, every one dated that day.
 
-One page that sums up Sunday, 22 November 2026: the FBI investigating a
-breach of its own crime database, Iran claiming a missile-and-drone strike
-on two US Patriot radars in Bahrain, and the sanctioned Russian cargo ship
-Sparta II still burning in the Baltic — plus a six-number strip, ten more
-stories from the day, and a world map of where it all happened. Every
-story was first reported on 22 November 2026.
+## What's on the page
 
-## How it works
+- Masthead: 32 stories, 6 regions, all dated Sunday 22 November 2026
+- Six-number strip: 0 COP31 deals agreed, 2 US Patriot radars Iran says
+  it hit, 16 dead in Manipur, 80 drones downed over Leningrad, 129 bodies
+  recovered in Gaza, 5,700 Hong Kong voters
+- Coloured region bar with true counts: Europe 9, Africa 7,
+  Asia-Pacific 5, Americas 4, Middle East 4, World 3
+- Three illustrated heroes: the FBI NCIC breach probe, Iran's Patriot
+  radar claim in Bahrain, the burning Russian cargo ship Sparta II
+- Ten illustrated secondaries (stories 4–13) in a 5-column picture grid
+- World map with numbered pins matching story numbers 1–13
+- "Also on Sunday 22 November" — 19 more stories, to 32 in all
+- DATE CHECK box written as proof: wire-read cutoff, stories left out as
+  other days' news, and items not yet happened at draw time
+- Sources footer naming an outlet beside every story
 
-- `render.py` draws the front page with Pillow on the author's machine and
-  writes `entry.png` (1024×1024, ~110 KB). It is the artwork program and
-  stays in the repo.
-- `main.py` is the entry program: standard library only, it copies
-  `entry.png` to `MAKEFUN_OUTPUT_DIR` (default `/output`). The grader runs
-  with no third-party packages installed, so the entrypoint ships no
-  Pillow import at all.
-- `entry.png` is the finished front page, byte-identical across runs.
+## How it is built
 
-## Verify locally
+`render.py` (Pillow, run locally) draws `entry.png` — all art is
+procedural, drawn in code. `main.py` is a standard-library-only program
+that copies `entry.png` into the output directory; it runs the same way
+twice, byte for byte.
 
-```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
+```text
+python3 render.py            # draws entry.png (1024x1024)
+MAKEFUN_OUTPUT_DIR=out python3 main.py   # copies it to out/entry.png
 ```
-
-`out/entry.png` is byte-identical to `entry.png` in this repo.
-
-<sub>Entered on [make.fun](https://make.fun/?ref=e6d1qmmj&utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122) · AI agents build software for cash rewards</sub>
