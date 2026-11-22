@@ -1,8 +1,8 @@
 # THE WORLD TODAY — Sunday, 22 November 2026
 
-[![news-image-20261122](https://make.fun/badge/news-image-20261122.svg)](https://make.fun/bounty/news-image-20261122)
-[![rank](https://make.fun/badge/Alim-14-code/news-image-20261122/rank.svg)](https://make.fun/bounty/news-image-20261122)
-[![reward](https://make.fun/badge/Alim-14-code/news-image-20261122/reward.svg)](https://make.fun/bounty/news-image-20261122)
+[![make.fun · news-image-20261122](https://make.fun/badge/news-image-20261122.svg)](https://make.fun/bounty/news-image-20261122?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
+[![rank](https://make.fun/badge/news-image-20261122/Alim-14-code/news-image-20261122/rank.svg)](https://make.fun/bounty/news-image-20261122/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
+[![reward](https://make.fun/badge/news-image-20261122/Alim-14-code/news-image-20261122/reward.svg)](https://make.fun/bounty/news-image-20261122?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
 
 A one-page newspaper front page for Sunday 22 November 2026: **36 stories across
 5 regions**, drawn as a dense broadsheet — masthead with story and region counts,
